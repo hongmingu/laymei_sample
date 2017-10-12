@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'laymeiuser',
     'laymeibigmsg',
     'laymeismallmsg',
+    'django_ses_boto3',
 ]
 
 SITE_ID = 1
