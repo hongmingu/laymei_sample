@@ -6,6 +6,9 @@
 <html>
   <head>
     <title>{% block head_title %}{% endblock %}</title>
+    {% if user.is_authenticated %}
+{#        <meta http-equiv="refresh" content="0; url=" />#}
+    {% endif %}
     {% block extra_head %}
     {% endblock %}
   </head>

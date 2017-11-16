@@ -296,9 +296,11 @@ position:absolute;
              }
         });
 
-        $(".readmore_as_p").each(function () {
 
+        $(".readmore_as_p").each(function () {
+            var saved_t = $(this);
             var original_str = $(this).text();
+
             console.log("hi");
             if (original_str.length>20) {
                 var subtracted_str = original_str.substr(0, 20);
@@ -306,34 +308,34 @@ position:absolute;
                 console.log(p_plus_readmore_str);
                 var link_read_more = '<a class="read_more"><p>Read more</p></a>';
                 $(this).parent().children('p.readmore_as_p').html(p_plus_readmore_str+link_read_more);
-
-                $('.read_more').click(function (event) {
-                    event.preventDefault();
-                    var originaltext = $(this).parent().children('p.readmore_before').attr('data');
-
-                    var text = '<div class="media" style="">\n' +
-            '                    <div class="media-body text-center" style="">\n' +
-            '                        <button class="btn btn-warning" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">hello</button><button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">hello</button><button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">hello</button><button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">hello</button><button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">hello</button><button class="btn btn-warning" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px; color: #282828; background-color: #b39369;">share</button>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <form style="padding-top: 20px">\n' +
-            '                    <div class="input-group input-group-sm">\n' +
-            '                        <input type="text" class="form-control" id="conversation" placeholder="say">\n' +
-            '                        <div class="input-group-btn">\n' +
-            '                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-ok"></i></button>\n' +
-            '                        </div>\n' +
-            '                    </div>\n' +
-            '                </form>';
-                    $(this).parent().parent().append(text);
-                    $(this).parent().html(originaltext);
-                    console.log(text)
-
-                });
             }
             else {
             }
         });
+            $('.read_more').click(function (event) {
+                event.preventDefault();
+                var saved_this = $(this);
+                var originaltext = $(this).parent().children('p.readmore_before').attr('data');
+                var text = '<div class="media" style="">\n' +
+'                    <div class="media-body text-center" style="">\n' +
+'                        <button class="btn btn-warning" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">hello</button><button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">hello</button><button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">hello</button><button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">hello</button><button class="btn btn-default" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px;">hello</button><button class="btn btn-warning" style="margin-left: 1px; margin-right: 1px; padding-left: 6px; padding-right: 6px; padding-top: 3px; padding-bottom: 3px; color: #282828; background-color: #b39369;">share</button>\n' +
+'                    </div>\n' +
+'                </div>\n' +
+'                <form style="padding-top: 20px">\n' +
+'                    <div class="input-group input-group-sm">\n' +
+'                        <input type="text" class="form-control" id="conversation" placeholder="say">\n' +
+'                        <div class="input-group-btn">\n' +
+'                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-ok"></i></button>\n' +
+'                        </div>\n' +
+'                    </div>\n' +
+'                </form>';
+                saved_this.parent().parent().parent().append(text);
+                saved_this.parent().html(originaltext);
 
+
+                console.log(text)
+
+            });
         $('#textbtn').click(function () {
                 var text = '<div class="media" style="">\n' +
         '                    <div class="media-body text-center" style="">\n' +

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Demo-smallmsg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <style>
+
+.icon-color {
+  color: #282828;
+}
+.nav {
+  display: flex;
+}
+.msgtext{
+    color: black;
+}
+.msgtext:link {
+    color: black;
+    text-decoration: none;
+}
+.msgtext:visited{
+    color: black;
+    text-decoration: none;
+}
+.msgtext:hover{
+    color: black;
+    text-decoration: none;
+}
+.msgtext:active{
+    color: black;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .nav > li {
+    float: right;
+  }
+}
+
+.frontpage_square{
+position:relative;
+overflow:hidden;
+padding-bottom:100%;
+}
+.frontpage_square img{
+position:absolute;
+}
+    </style>
+</head>
+<body>
+
+    <!--navbar start-->
+    <div class="navbar navbar-fixed-top" style="background-color: #b39369; max-height: 50px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+
+                    <div class="navbar-header">
+
+                        <button class="navbar-toggle navbar-right selected-icon" type="a" data-toggle="collapse" data-target=".navbar-collapse" style="margin-top: 0px;margin-bottom: 0px;padding-left: 0px;padding-top: 0px;padding-bottom: 0px;border-top-width: 0px;width: 32px;padding-right: 0px;border-bottom-width: 0px;margin-right: 0px;border-right-width: 0px;border-left-width: 0px;">
+                        	<ul class="nav navbar-nav" style="margin-top: 0px; margin-bottom: 0px; padding-left: 15px;">
+								<li><a class="selected-icon" href="#" style="padding: 15px;"><i class="glyphicon glyphicon-search icon-color"></i></a></li>
+							</ul>
+                        </button>
+
+                        <ul class="nav navbar-nav" style="margin-top: 0px; margin-bottom: 0px; padding-left: 15px;">
+                            <li><a href="#" class="selected-icon" style="padding: 15px;"><i class="glyphicon glyphicon-comment icon-color"></i></a></li>
+                            <li><a href="#" class="selected-icon" style="padding: 15px"><i class="glyphicon glyphicon-list-alt icon-color"></i></a></li>
+                            <li><a href="#" class="selected-icon" style="padding: 15px"><i class="glyphicon glyphicon-user icon-color"></i></a></li>
+                        </ul>
+
+                    </div>
+
+                    <div class="collapse navbar-collapse">
+
+                        <form class="navbar-form navbar-left">
+                            <div class="input-group input-group-sm" style="max-width:360px;">
+                                <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+
+                    <ul class="nav navbar-nav" style="margin-top: 0px;margin-bottom: 0px;padding-left: 0px;">
+                        <li class="dropdown">
+                            <a href="#" class="selected-icon dropdown-toggle" data-toggle="dropdown" style="padding: 15px; margin-left: -3px; width: 44px;" aria-expanded="false"><i class="glyphicon glyphicon-option-horizontal icon-color"></i></a>
+                            <ul class="dropdown-menu" style="background-color: #b39369;margin-left: -4px;">
+                                <li>
+                                    <a href="#" style="padding-left: 5px; padding-right: 5px;">Logout</a>
+                                    <a href="#" style="padding-left: 5px; padding-right: 5px;">Setting</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--navbar end-->
+
+    <!--padding start-->
+    <div class="container-fluid" style="margin-top: 60px">
+        <div class="row"></div>
+    </div>
+    <!--padding end-->
+
+
+
+<!--bigmsg base start-->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4"  style="border-bottom-width:0.5px; border-bottom-style: solid; border-bottom-color: #dddddd; padding: 10px;">
+
+  <!-- Left-aligned media object -->
+            <div class="media">
+                <div class="media-left media-top">
+                  <img src="https://i.ytimg.com/vi/YJZqi7LAW3E/maxresdefault.jpg" class="media-object pull-left img-circle" style="width:60px; height:60px;">
+                </div>
+                <div class="media-body" style="padding: 10px;">
+                  <h4 class="media-heading"><b>아이린</b></h4>
+                  <a class="msgtext"><p class="smallmsg_original">Lorem ipsum do <span class="badge pull-right" style="background-color: royalblue">6</span></p></a>
+
+      <!-- bigmsg's smail pic start-->
+
+                 </div>
+                  <!-- bigmsg's smail pic end-->
+
+             </div>
+                  <!-- bigmsg's smail pic end-->
+          <!-- bigmsg's smail pic end-->
+
+        </div><!--Here is col-xs...-->
+    </div>
+</div>
+
+<!--bigmsg base End-->
+
+
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+    <hr>
+
+    <!--padding start-->
+    <div class="container-fluid" style="margin-top: 60px">
+        <div class="row"></div>
+    </div>
+    <!--padding end-->
+
+
+
+
+<div class="checkbox">
+  <label><input class="toto" type="checkbox" value="">Option 1</label>
+</div>
+<div class="checkbox">
+  <label><input class="toto" type="checkbox" id="check2" value="">Option 2</label>
+</div>
+<div class="checkbox">
+  <label><input class="toto" type="checkbox" value="">Option 3</label>
+</div>
+    <!--profile end-->
+<div id="btn-box">
+
+    <button type="button" class="btn" id="children-btn" style="background-color: #b39369; width: 100px">hey</button>
+</div>
+
+
+</body>
+<script>
+    $(document).ready(function () {
+        $('.selected-icon').mouseenter(function () {
+            $(this).css('background-color', '#7F613F');
+        });
+        $('.selected-icon').mouseleave(function () {
+            if (!$(this).hasClass('clicked')){
+                $(this).css('background-color', '#b39369');
+            }
+        });
+
+        $('.selected-icon').click(function () {
+            $(this).toggleClass('clicked');
+        });
+
+
+        $(".toto").change(function(){
+        if($(".toto").is(":checked")){
+            var toto_id = $(this).attr("id");
+            alert(toto_id);
+            if($("#btn-box").children("#children-btn")){
+                $("#btn-box").children("#children-btn").remove();
+
+            }
+            else {
+
+            }
+        }else{
+                var text = "<button type=\"button\" class=\"btn\" id=\"children-btn\" style=\"background-color: #b39369; width: 100px\">hey</button>"
+                $("#btn-box").append(text);
+                alert("hello")
+             }
+        });
+
+
+    });
+            $(".smallmsg_original").each(function () {
+                        var saved_t = $(this);
+                        var original_str = $(this).text();
+
+                        console.log("hi");
+                        if (original_str.length>20) {
+                            var subtracted_str = original_str.substr(0, 30);
+                            var p_plus_readmore_str = '<p class="smallmsg_modified" data="' + original_str + '">' + subtracted_str + '...</p>';
+                            console.log(p_plus_readmore_str);
+                            $(this).parent().children('p.smallmsg_original').html(p_plus_readmore_str);
+                        }
+                        else {
+                        }
+                    });
+
+</script>
+</html>
