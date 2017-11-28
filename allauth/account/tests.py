@@ -198,7 +198,7 @@ class AccountTests(TestCase):
 
     def test_password_reset_get(self):
         resp = self.client.get(reverse('account_reset_password'))
-        self.assertTemplateUsed(resp, 'allauth/account/password_reset.html')
+        self.assertTemplateUsed(resp, 'account/password_reset.html')
 
     def test_password_set_redirect(self):
         resp = self._password_set_or_change_redirect(
@@ -291,7 +291,7 @@ class AccountTests(TestCase):
         resp = self.client.get(url)
         self.assertTemplateUsed(
             resp,
-            'allauth/account/password_reset_from_key.%s' %
+            'account/password_reset_from_key.%s' %
             app_settings.TEMPLATE_EXTENSION)
         self.assertFalse('token_fail' in resp.context_data)
 
@@ -313,7 +313,7 @@ class AccountTests(TestCase):
                                  'password2': 'newpass123'})
         self.assertTemplateUsed(
             resp,
-            'allauth/account/password_reset_from_key.%s' %
+            'account/password_reset_from_key.%s' %
             app_settings.TEMPLATE_EXTENSION)
         self.assertTrue(resp.context_data['token_fail'])
 
@@ -321,7 +321,7 @@ class AccountTests(TestCase):
         response = self.client.get(url)
         self.assertTemplateUsed(
             response,
-            'allauth/account/password_reset_from_key.%s' %
+            'account/password_reset_from_key.%s' %
             app_settings.TEMPLATE_EXTENSION)
         self.assertTrue(response.context_data['token_fail'])
 
@@ -368,7 +368,7 @@ class AccountTests(TestCase):
         self.assertEqual(len(mail.outbox), 1)
         self.assertTemplateUsed(
             resp,
-            'allauth/account/verification_sent.%s' % app_settings.TEMPLATE_EXTENSION)
+            'account/verification_sent.%s' % app_settings.TEMPLATE_EXTENSION)
         # Attempt to login, unverified
         for attempt in [1, 2]:
             resp = c.post(reverse('account_login'),
@@ -383,7 +383,7 @@ class AccountTests(TestCase):
 
             self.assertTemplateUsed(
                 resp,
-                'allauth/account/verification_sent.' + app_settings.TEMPLATE_EXTENSION)
+                'account/verification_sent.' + app_settings.TEMPLATE_EXTENSION)
             # Attempt 1: no mail is sent due to cool-down ,
             # but there was already a mail in the outbox.
             self.assertEqual(len(mail.outbox), attempt)
@@ -402,7 +402,7 @@ class AccountTests(TestCase):
                              args=[confirmation.key]))
         self.assertTemplateUsed(
             resp,
-            'allauth/account/email_confirm.%s' % app_settings.TEMPLATE_EXTENSION)
+            'account/email_confirm.%s' % app_settings.TEMPLATE_EXTENSION)
         c.post(reverse('account_confirm_email',
                        args=[confirmation.key]))
         resp = c.post(reverse('account_login'),
@@ -569,7 +569,7 @@ class AccountTests(TestCase):
         c, resp = self._logout_view('get')
         self.assertTemplateUsed(
             resp,
-            'allauth/account/logout.%s' % app_settings.TEMPLATE_EXTENSION)
+            'account/logout.%s' % app_settings.TEMPLATE_EXTENSION)
 
         receiver_mock = Mock()
         user_logged_out.connect(receiver_mock)

@@ -15,6 +15,18 @@
 .thumb .centered img { position: absolute; top: 0; left: 0; max-width: 100%; height: auto; -webkit-transform: translate(-50%,-50%); -ms-transform: translate(-50%,-50%); transform: translate(-50%,-50%); }
 img.portrait { width: auto; max-height: 100%; }
 
+
+    .wrap {
+      width: 500px;
+    }
+    .wrap textarea {
+      width: 100%;
+      resize: none;
+      overflow-y: hidden; /* prevents scroll bar flash */
+      padding: 1.1em; /* prevents text jump on Enter keypress */
+      padding-bottom: 0.2em;
+      line-height: 1.6;
+    }
 </style>
 <body>
 <div class="container">
@@ -24,7 +36,7 @@ img.portrait { width: auto; max-height: 100%; }
             <div class="thumb-wrapper">
                 <div class="thumb" style="border: solid">
                     <div class="centered">
-                        <img src="">
+                        <img src="https://78.media.tumblr.com/cdede23aae81e5cd5aca39864ab26b36/tumblr_ozb5w2LVPA1w8opylo7_1280.jpg">
                     </div>
                 </div>
             </div>
@@ -35,7 +47,7 @@ img.portrait { width: auto; max-height: 100%; }
             <div class="thumb-wrapper">
                 <div class="thumb" style="border: solid">
                     <div class="centered">
-                        <img class="portrait" src="">
+                        <img src="https://78.media.tumblr.com/3bd2d269de5fcd12e7e497917f914345/tumblr_oz23rvUrWU1w8opylo10_1280.jpg">
                     </div>
                 </div>
             </div>
@@ -46,7 +58,7 @@ img.portrait { width: auto; max-height: 100%; }
             <div class="thumb-wrapper">
                 <div class="thumb" style="border: solid">
                     <div class="centered">
-                        <img src="">
+                        <img  class="portrait" src="https://78.media.tumblr.com/f280acf2222fdcb66a37aea9495e2cb5/tumblr_oz02iovF8q1w8opylo9_1280.jpg">
                     </div>
                 </div>
             </div>
@@ -55,6 +67,34 @@ img.portrait { width: auto; max-height: 100%; }
 </div>
 
 
+<div class="conatiner">
+    <div class="row" style="">
+        <div id="col_autoheight" class="col-sm-12 col-md-12 col-lg-12" style="margin-top: 10px; height: 100px; padding-top: 100px; background-color: yellow">
+
+            <form role="form">
+                <div class="input-group input-group-sm" style="">
+                    <textarea class="form-control" id="usrname" placeholder="Enter email" style="resize: none; width: 100%; position: absolute; bottom: 0;"></textarea>
+                    <div class="" style="">
+                        <button type="button" class="btn btn-default" id="textbtninput" style="float: right"><i class="glyphicon glyphicon-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
 
 </body>
+
+
+  <script>
+    $(document).ready(function() {
+      $('#textareaautoheight').on( 'keydown', 'textarea', function (e){
+        $(this).css('height', 'auto' );
+        $(this).height( this.scrollHeight );
+      });
+      $('#textareaautoheight').find( 'textarea' ).keydown();
+
+    });
+  </script>
 </html>

@@ -114,7 +114,7 @@ class OAuthTestsMixin(object):
         resp = self.client.get(reverse(self.provider.id + '_callback'))
         self.assertTemplateUsed(
             resp,
-            'allauth/socialaccount/authentication_error.%s' % getattr(
+            'socialaccount/authentication_error.%s' % getattr(
                 settings, 'ACCOUNT_TEMPLATE_EXTENSION', 'html'))
 
 
@@ -235,7 +235,7 @@ class OAuth2TestsMixin(object):
         resp = self.client.get(reverse(self.provider.id + '_callback'))
         self.assertTemplateUsed(
             resp,
-            'allauth/socialaccount/authentication_error.%s' % getattr(
+            'socialaccount/authentication_error.%s' % getattr(
                 settings, 'ACCOUNT_TEMPLATE_EXTENSION', 'html'))
 
 
@@ -438,7 +438,7 @@ class SocialAccountTests(TestCase):
             username=user.username,
             password=user.username)
         resp = self.client.get(reverse('socialaccount_connections'))
-        self.assertTemplateUsed(resp, 'allauth/socialaccount/connections.html')
+        self.assertTemplateUsed(resp, 'socialaccount/connections.html')
         resp = self.client.post(
             reverse('socialaccount_connections'),
             {'account': account.pk})

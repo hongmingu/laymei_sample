@@ -124,7 +124,7 @@ class LoginView(RedirectAuthenticatedUserMixin,
                 AjaxCapableProcessFormViewMixin,
                 FormView):
     form_class = LoginForm
-    template_name = "allauth/account/login." + app_settings.TEMPLATE_EXTENSION
+    template_name = "account/login." + app_settings.TEMPLATE_EXTENSION
     success_url = None
     redirect_field_name = "next"
 
@@ -175,7 +175,7 @@ login = LoginView.as_view()
 
 class CloseableSignupMixin(object):
     template_name_signup_closed = (
-        "allauth/account/signup_closed." + app_settings.TEMPLATE_EXTENSION)
+        "account/signup_closed." + app_settings.TEMPLATE_EXTENSION)
 
     def dispatch(self, request, *args, **kwargs):
         try:
@@ -200,7 +200,7 @@ class CloseableSignupMixin(object):
 
 class SignupView(RedirectAuthenticatedUserMixin, CloseableSignupMixin,
                  AjaxCapableProcessFormViewMixin, FormView):
-    template_name = "allauth/account/signup." + app_settings.TEMPLATE_EXTENSION
+    template_name = "account/signup." + app_settings.TEMPLATE_EXTENSION
     form_class = SignupForm
     redirect_field_name = "next"
     success_url = None
@@ -259,7 +259,7 @@ signup = SignupView.as_view()
 
 class ConfirmEmailView(TemplateResponseMixin, View):
 
-    template_name = "allauth/account/email_confirm." + app_settings.TEMPLATE_EXTENSION
+    template_name = "account/email_confirm." + app_settings.TEMPLATE_EXTENSION
 
     def get(self, *args, **kwargs):
         try:
@@ -366,7 +366,7 @@ confirm_email = ConfirmEmailView.as_view()
 
 
 class EmailView(AjaxCapableProcessFormViewMixin, FormView):
-    template_name = "allauth/account/email." + app_settings.TEMPLATE_EXTENSION
+    template_name = "account/email." + app_settings.TEMPLATE_EXTENSION
     form_class = AddEmailForm
     success_url = reverse_lazy('account_email')
 
@@ -529,7 +529,7 @@ email = login_required(EmailView.as_view())
 
 class PasswordChangeView(AjaxCapableProcessFormViewMixin, FormView):
     template_name = (
-        "allauth/account/password_change." + app_settings.TEMPLATE_EXTENSION)
+        "account/password_change." + app_settings.TEMPLATE_EXTENSION)
     form_class = ChangePasswordForm
     success_url = reverse_lazy("account_change_password")
 
@@ -578,7 +578,7 @@ password_change = login_required(PasswordChangeView.as_view())
 
 
 class PasswordSetView(AjaxCapableProcessFormViewMixin, FormView):
-    template_name = "allauth/account/password_set." + app_settings.TEMPLATE_EXTENSION
+    template_name = "account/password_set." + app_settings.TEMPLATE_EXTENSION
     form_class = SetPasswordForm
     success_url = reverse_lazy("account_set_password")
 
@@ -625,7 +625,7 @@ password_set = login_required(PasswordSetView.as_view())
 
 
 class PasswordResetView(AjaxCapableProcessFormViewMixin, FormView):
-    template_name = "allauth/account/password_reset." + app_settings.TEMPLATE_EXTENSION
+    template_name = "account/password_reset." + app_settings.TEMPLATE_EXTENSION
     form_class = ResetPasswordForm
     success_url = reverse_lazy("account_reset_password_done")
     redirect_field_name = "next"
@@ -656,7 +656,7 @@ password_reset = PasswordResetView.as_view()
 
 class PasswordResetDoneView(TemplateView):
     template_name = (
-        "allauth/account/password_reset_done." + app_settings.TEMPLATE_EXTENSION)
+        "account/password_reset_done." + app_settings.TEMPLATE_EXTENSION)
 
 
 password_reset_done = PasswordResetDoneView.as_view()
@@ -664,7 +664,7 @@ password_reset_done = PasswordResetDoneView.as_view()
 
 class PasswordResetFromKeyView(AjaxCapableProcessFormViewMixin, FormView):
     template_name = (
-        "allauth/account/password_reset_from_key." + app_settings.TEMPLATE_EXTENSION)
+        "account/password_reset_from_key." + app_settings.TEMPLATE_EXTENSION)
     form_class = ResetPasswordKeyForm
     success_url = reverse_lazy("account_reset_password_from_key_done")
 
@@ -744,7 +744,7 @@ password_reset_from_key = PasswordResetFromKeyView.as_view()
 
 class PasswordResetFromKeyDoneView(TemplateView):
     template_name = (
-        "allauth/account/password_reset_from_key_done." +
+        "account/password_reset_from_key_done." +
         app_settings.TEMPLATE_EXTENSION)
 
 
@@ -753,7 +753,7 @@ password_reset_from_key_done = PasswordResetFromKeyDoneView.as_view()
 
 class LogoutView(TemplateResponseMixin, View):
 
-    template_name = "allauth/account/logout." + app_settings.TEMPLATE_EXTENSION
+    template_name = "account/logout." + app_settings.TEMPLATE_EXTENSION
     redirect_field_name = "next"
 
     def get(self, *args, **kwargs):
@@ -801,7 +801,7 @@ logout = LogoutView.as_view()
 
 class AccountInactiveView(TemplateView):
     template_name = (
-        'allauth/account/account_inactive.' + app_settings.TEMPLATE_EXTENSION)
+        'account/account_inactive.' + app_settings.TEMPLATE_EXTENSION)
 
 
 account_inactive = AccountInactiveView.as_view()
@@ -809,7 +809,7 @@ account_inactive = AccountInactiveView.as_view()
 
 class EmailVerificationSentView(TemplateView):
     template_name = (
-        'allauth/account/verification_sent.' + app_settings.TEMPLATE_EXTENSION)
+        'account/verification_sent.' + app_settings.TEMPLATE_EXTENSION)
 
 
 email_verification_sent = EmailVerificationSentView.as_view()

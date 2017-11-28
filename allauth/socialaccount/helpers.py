@@ -41,7 +41,7 @@ def _process_signup(request, sociallogin):
                 sociallogin):
             return render(
                 request,
-                "allauth/account/signup_closed." +
+                "account/signup_closed." +
                 account_settings.TEMPLATE_EXTENSION)
         get_adapter(request).save_user(request, sociallogin, form=None)
         ret = complete_social_signup(request, sociallogin)
@@ -83,7 +83,7 @@ def render_authentication_error(request,
     context.update(extra_context)
     return render(
         request,
-        "allauth/socialaccount/authentication_error." +
+        "socialaccount/authentication_error." +
         account_settings.TEMPLATE_EXTENSION,
         context
     )

@@ -439,9 +439,9 @@ class DefaultAccountAdapter(object):
             "key": emailconfirmation.key,
         }
         if signup:
-            email_template = 'allauth/account/email/email_confirmation_signup'
+            email_template = 'account/email/email_confirmation_signup'
         else:
-            email_template = 'allauth/account/email/email_confirmation'
+            email_template = 'account/email/email_confirmation'
         self.send_mail(email_template,
                        emailconfirmation.email_address.email,
                        ctx)
