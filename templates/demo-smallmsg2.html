@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Demo-smallmsg</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- 부트스트랩 3.3.7로 버전바꾸니 드랍다운에서 인풋클릭시 사라지는거 해결-->
+<script
+  src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js"
+  integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA="
+  crossorigin="anonymous"></script>
+<style>
+.icon-color {
+  color: black;
+}
+.nav {
+  display: flex;
+}
+.msgtext{
+    color: black;
+}
+.msgtext:link {
+    color: black;
+    text-decoration: none;
+}
+.msgtext:visited{
+    color: black;
+    text-decoration: none;
+}
+.msgtext:hover{
+    color: black;
+    text-decoration: none;
+}
+.msgtext:active{
+    color: black;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .nav > li {
+    float: right;
+  }
+}
+
+.frontpage_square{
+position:relative;
+overflow:hidden;
+padding-bottom:100%;
+}
+.frontpage_square img{
+position:absolute;
+}
+::-webkit-scrollbar{
+    width: 3px;
+}
+::-webkit-scrollbar-track{
+    background-color: #003366;
+}
+::-webkit-scrollbar-thumb {
+      background-color: #b39369;
+} /* this will style the thumb, ignoring the track */
+::-webkit-scrollbar-button {
+      background-color: #7c2929;
+
+
+::-webkit-scrollbar-corner {
+      background-color: black;
+} /* if both the vertical and the horizontal bars appear, then perhaps the right bottom corner also needs to be styled */ /* optionally, you can style the top and the bottom buttons (left and right for horizontal bars) */
+
+
+.textarea_size {
+    resize:none;
+    line-height:150%;
+    width:100%;
+    overflow-y:hidden;
+    height:30px;
+    border:1px solid #ccc;
+}
+    </style>
+
+
+
+</head>
+<body>
+
+<div class="dropdown bigdiv">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+    <span class="caret"></span></button>
+  <ul class="dropdown-menu bigul">
+    <li><a href="#" id="open_input">dumped_li</a></li>
+      <!--
+    <li class="ui-widget">
+<form role="form" style="width: 100%;">
+                <div class="input-group input-group-sm" style="width: 100%;">
+                  <input type="text" class="form-control" id="tags" placeholder="Enter email">
+                </div>
+              </form>
+    </li>
+    -->
+
+      <ul class="list-group test"></ul>
+  </ul>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="anotherdiv" style="background-color: #ccc; height: 200px;">
+  GoesHere:
+  <br/>
+  <ul></ul>
+</div>
+
+</body>
+<script>
+    $(document).ready(function () {
+
+        var availableTags = [
+  "ActionScript",
+  "AppleScript",
+  "Asp",
+  "BASIC",
+  "C",
+  "C++",
+  "Clojure",
+  "COBOL",
+  "ColdFusion",
+  "Erlang",
+  "Fortran",
+];
+
+        /*
+              $('#tags').autocomplete({
+  search: function(event, ui) {
+    $('.test').empty();
+  },
+  source: availableTags,
+    messages: {
+    noResults: '',
+    results: function() {}
+    }
+}).data('autocomplete')._renderItem = function(ul, item) {
+  return $('<li class="list-group-item"></li>')
+    .data('item.autocomplete', item)
+    .append(item.value)
+    .appendTo($('.test'));
+};
+*/
+
+        var ul_text = '    <li class="ui-widget">\n' +
+            '<form role="form" style="width: 100%;">\n' +
+            '                <div class="input-group input-group-sm" style="width: 100%;">\n' +
+            '                  <input type="text" class="form-control" id="tags" placeholder="Enter email">\n' +
+            '                </div>\n' +
+            '              </form>\n' +
+            '    </li>'
+        $('#open_input').click(function (e) {
+            $('.bigul').append(ul_text)
+                    $('#tags').autocomplete({
+  search: function(event, ui) {
+    $('.test').empty();
+  },
+  source: availableTags,
+    messages: {
+    noResults: '',
+    results: function() {}
+    }
+}).data('autocomplete')._renderItem = function(ul, item) {
+  return $('<li class="list-group-item"></li>')
+    .data('item.autocomplete', item)
+    .append(item.value)
+    .appendTo($('.test'));
+};
+            e.stopPropagation();
+        });
+
+    });
+
+
+</script>
+</html>
