@@ -5,8 +5,15 @@
     <title>Demo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- 부트스트랩 3.3.7로 버전바꾸니 드랍다운에서 인풋클릭시 사라지는거 해결-->
+    <script
+    src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js"
+    integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA="
+    crossorigin="anonymous"></script>
+
+
     <style>
 
 .icon-color {
@@ -54,19 +61,19 @@ position:absolute;
 <body>
 
     <!--navbar start-->
-    <div class="navbar navbar-fixed-top" style="background-color: #b39369; max-height: 50px;">
+    <div class="navbar navbar-fixed-top" style="background-color: transparent; max-height: 50px;">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
 
                     <div class="navbar-header">
-
+                        <!--
                         <button class="navbar-toggle navbar-right selected-icon" type="a" data-toggle="collapse" data-target=".navbar-collapse" style="margin-top: 0px;margin-bottom: 0px;padding-left: 0px;padding-top: 0px;padding-bottom: 0px;border-top-width: 0px;width: 32px;padding-right: 0px;border-bottom-width: 0px;margin-right: 0px;border-right-width: 0px;border-left-width: 0px;">
                         	<ul class="nav navbar-nav" style="margin-top: 0px; margin-bottom: 0px; padding-left: 15px;">
 								<li><a class="selected-icon" href="#" style="padding: 15px;"><i class="glyphicon glyphicon-search icon-color"></i></a></li>
 							</ul>
                         </button>
-
+                        -->
                         <ul class="nav navbar-nav" style="margin-top: 0px; margin-bottom: 0px; padding-left: 15px;">
                             <li><a href="#" class="selected-icon" style="padding: 15px;"><i class="glyphicon glyphicon-comment icon-color"></i></a></li>
                             <li><a href="#" class="selected-icon" style="padding: 15px"><i class="glyphicon glyphicon-list-alt icon-color"></i></a></li>
@@ -431,11 +438,11 @@ position:absolute;
 <script>
     $(document).ready(function () {
         $('.selected-icon').mouseenter(function () {
-            $(this).css('background-color', '#7F613F');
+            $(this).css('background-color', '#3e7f1b');
         });
         $('.selected-icon').mouseleave(function () {
             if (!$(this).hasClass('clicked')){
-                $(this).css('background-color', '#b39369');
+                $(this).css('background-color', '#b3191a');
             }
         });
 

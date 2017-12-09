@@ -21,11 +21,12 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^laymeibigmsg/', include('laymeibigmsg.urls')),
-    url(r'^laymeismallmsg/', include('laymeismallmsg.urls')),
-    url(r'^laymeiuser/', include('laymeiuser.urls')),
+    url(r'^bigmsg/', include('laymeibigmsg.urls')),
+    url(r'^smallmsg/', include('laymeismallmsg.urls')),
+    url(r'^user/', include('laymeiuser.urls')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^$', TemplateView.as_view(template_name='base.html')),
+    url(r'^frame/$', TemplateView.as_view(template_name='frame_base.html')),
     url(r'^accounts/profile/$', TemplateView.as_view(template_name='plain/example/profile.html')),
 ]
 
