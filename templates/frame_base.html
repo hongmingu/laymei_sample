@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block head_title %}title{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script
+    src="https://code.jquery.com/ui/1.9.2/jquery-ui.min.js"
+    integrity="sha256-eEa1kEtgK9ZL6h60VXwDsJ2rxYCwfxi40VZ9E0XwoEA="
+    crossorigin="anonymous"></script>
+
+<style>
+.hover_color{
+    background-color: #b3ffb4;
+}
+
+.icon_navbar_color {
+  color: #282828;
+}
+.nav {
+  display: flex;
+}
+.msgtext{
+    color: black;
+}
+.msgtext:link {
+    color: black;
+    text-decoration: none;
+}
+.msgtext:visited{
+    color: black;
+    text-decoration: none;
+}
+.msgtext:hover{
+    color: black;
+    text-decoration: none;
+}
+.msgtext:active{
+    color: black;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+  .nav > li {
+    float: right;
+  }
+}
+
+
+.frontpage_square{
+position:relative;
+overflow:hidden;
+padding-bottom:100%;
+}
+.frontpage_square img{
+position:absolute;
+}
+    </style>
+
+</head>
+<body>
+
+    <!--navbar start-->
+    <div class="navbar navbar-fixed-top" style="background-color: transparent; max-height: 50px;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+
+                    <div class="navbar-header">
+
+                        <button class="navbar-toggle navbar-right" type="a" data-toggle="collapse" data-target=".navbar-collapse_search" style="margin-top: 0px;margin-bottom: 0px;padding-left: 0px;padding-top: 0px;padding-bottom: 0px;border-top-width: 0px;width: 32px;padding-right: 0px;border-bottom-width: 0px;margin-right: 0px;border-right-width: 0px;border-left-width: 0px;">
+                        	<ul class="nav navbar-nav" style="margin-top: 0px; margin-bottom: 0px; padding-left: 15px;">
+								<li><a class="icon_navbar" href="#" style="padding: 15px;"><i class="glyphicon glyphicon-search icon_navbar_color"></i></a></li>
+							</ul>
+                        </button>
+
+                        <ul class="nav navbar-nav" style="margin-top: 0px; margin-bottom: 0px; padding-left: 15px;">
+                            <li><a href="#" class="icon_navbar" style="padding: 15px;"><i class="glyphicon glyphicon-comment icon_navbar_color"></i></a></li>
+                            <li><a href="#" class="icon_navbar" style="padding: 15px"><i class="glyphicon glyphicon-list-alt icon_navbar_color"></i></a></li>
+                            <li><a href="#" class="icon_navbar" style="padding: 15px"><i class="glyphicon glyphicon-user icon_navbar_color"></i></a></li>
+                        </ul>
+
+                    </div>
+
+                        <div class="collapse navbar-collapse" style="">
+                            <form class="navbar-form navbar-left">
+                                <div class="input-group input-group-sm" style="max-width: 240px;">
+                                    <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search icon_navbar_color"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                </div>
+
+
+
+                <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                    <ul class="nav navbar-nav" style="margin-top: 0px; margin-bottom: 0px;">
+                        <li><a href="#" class="icon_navbar" data-toggle="collapse" data-target=".navbar-collapse_other_option" style="padding: 15px;"><i class="glyphicon glyphicon-menu-down icon_navbar_color"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+                <div class="row">
+                    <div class="col-xs-push-7 col-xs-5 col-sm-push-9 col-sm-3 col-md-2 col-lg-2 collapse navbar-collapse_other_option">
+                        <div class="row">
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <a href="#"><p class="h5" style="text-align: center">logout</p></a>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <a href="#"><p class="h5" style="text-align: center">logout</p></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 collapse navbar-collapse_search">
+
+                        <div class="" style="padding: 10px;">
+                            <form class="form">
+                                <div class="input-group input-group-sm" style="max-width: 100%;">
+                                    <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" type="text">
+                                    <div class="input-group-btn">
+                                        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search icon_navbar_color"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+                    </div>
+
+
+                </div>
+
+    <!--navbar end-->
+
+    <!--padding start-->
+    <div class="container-fluid" style="margin-top: 60px">
+        <div class="row"></div>
+    </div>
+    <!--padding end-->
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        $('.icon_navbar').mouseenter(function () {
+            $(this).css('background-color', '#d8ffdc');
+        });
+        $('.icon_navbar').mouseleave(function () {
+            $(this).css('background-color', 'transparent');
+        });
+
+
+
+        $(".toto").change(function(){
+        if($(".toto").is(":checked")){
+            var toto_id = $(this).attr("id");
+            alert(toto_id);
+            if($("#btn-box").children("#children-btn")){
+                $("#btn-box").children("#children-btn").remove();
+
+            }
+            else {
+
+            }
+        }else{
+                var text = "<button type=\"button\" class=\"btn\" id=\"children-btn\" style=\"background-color: #b39369; width: 100px\">hey</button>"
+                $("#btn-box").append(text);
+                alert("hello")
+             }
+        });
+
+
+        var str = $('#mydiv').text();
+        if(len>300){
+          var new_str = str.subtstr(0,300);
+          new_str += '<div data="'+str+'">' +  new_str + '... </div>';
+
+          var newDiv = $(new_str);
+          var link_read_more = $('<a class="read_more">Read more</a>');
+          link_read_more.click(function(){
+            var originaltext = $(this).parent().attr('data');
+            $(this).parent().html(originaltext);
+          });
+          newDiv.append(link_read_more);
+        }
+    });
+
+</script>
+</html>
