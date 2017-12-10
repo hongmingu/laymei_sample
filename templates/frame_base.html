@@ -14,7 +14,7 @@
 
 <style>
 .hover_color{
-    background-color: #b3ffb4;
+    background-color: #deffdd;
 }
 
 .icon_navbar_color {
@@ -23,26 +23,10 @@
 .nav {
   display: flex;
 }
-.msgtext{
-    color: black;
-}
-.msgtext:link {
+.text_allblack, .text_allblack:link, .text_allblack:visited, .text_allblack:hover, .text_allblack:active, .text_allblack:focus {
     color: black;
     text-decoration: none;
 }
-.msgtext:visited{
-    color: black;
-    text-decoration: none;
-}
-.msgtext:hover{
-    color: black;
-    text-decoration: none;
-}
-.msgtext:active{
-    color: black;
-    text-decoration: none;
-}
-
 
 @media (max-width: 768px) {
   .nav > li {
@@ -113,18 +97,18 @@ position:absolute;
                 <div class="row">
                     <div class="col-xs-push-7 col-xs-5 col-sm-push-9 col-sm-3 col-md-2 col-lg-2 collapse navbar-collapse_other_option">
                         <div class="row">
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <a href="#"><p class="h5" style="text-align: center">logout</p></a>
-                            </div>
-                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                <a href="#"><p class="h5" style="text-align: center">logout</p></a>
-                            </div>
+                            <a class="text_allblack" href="#"><div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 icon_navbar">
+                                <p class="h5" style="text-align: center">logout</p>
+                            </div></a>
+                            <a class="text_allblack" href="#"><div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 icon_navbar">
+                                <p class="h5" style="text-align: center">logout</p>
+                            </div></a>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 collapse navbar-collapse_search">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 collapse navbar-collapse_search search_xs">
 
                         <div class="" style="padding: 10px;">
                             <form class="form">
@@ -147,7 +131,7 @@ position:absolute;
     <!--navbar end-->
 
     <!--padding start-->
-    <div class="container-fluid" style="margin-top: 60px">
+    <div class="container-fluid" style="margin-top: 60px; height: 30px; background-color: transparent">
         <div class="row"></div>
     </div>
     <!--padding end-->
@@ -157,7 +141,7 @@ position:absolute;
 <script>
     $(document).ready(function () {
         $('.icon_navbar').mouseenter(function () {
-            $(this).css('background-color', '#d8ffdc');
+            $(this).css('background-color', '#e9ffee');
         });
         $('.icon_navbar').mouseleave(function () {
             $(this).css('background-color', 'transparent');
@@ -182,7 +166,20 @@ position:absolute;
                 alert("hello")
              }
         });
+        var width = $(window).width();
+        $(window).on('resize', function(){
+            if($(this).width() != width){
+                width = $(this).width();
+                console.log(width);
+                if(width>=768){
+                    if($('.search_xs').attr('aria-expanded')==='true'){
 
+                        $(".search_xs").collapse('hide');
+
+                    }
+                }
+            }
+        });
 
         var str = $('#mydiv').text();
         if(len>300){
