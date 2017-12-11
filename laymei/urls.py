@@ -26,7 +26,7 @@ urlpatterns = [
     url(r'^user/', include('laymeiuser.urls')),
     url(r'^accounts/', include('allauth.urls')),
     url(r'^$', TemplateView.as_view(template_name='base.html')),
-    url(r'^frame/$', TemplateView.as_view(template_name='frame_base.html')),
+    url(r'^frame/$', TemplateView.as_view(template_name='base_main.html')),
     url(r'^accounts/profile/$', TemplateView.as_view(template_name='plain/example/profile.html')),
 ]
 
