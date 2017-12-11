@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>{% block head_title %}title{% endblock %}</title>
+    <title>{% block main_title %}title{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -47,6 +47,38 @@ position:absolute;
 
 </head>
 <body>
+    <!--
+    {% if user.is_authenticated %}
+        {% include '_login_required.html' %}
+    {% endif %}
+    -->
+
+    <div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color:#d2ffc4; height: 120px; position: fixed; bottom: 0px; z-index: 1;">
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3" style="text-align: center;">
+                    <p><h2><a href="#" style="background-color: #282828">Login</a>or Sign up?</h2></p>
+                    <p><h3>Here is Laymei</h3></p>
+                </div>
+            </div>
+            <!--
+            <div class="row" style="">
+                <div class="col-xs-3 col-xs-offset-2 col-sm-3 col-sm-offset-2 col-md-3 col-md-offset-2 col-lg-3 col-lg-offset-2" style="background-color: #72ee32; height: 45px;">
+                    <p class="h5 text-center" style="vertical-align: middle; display: inline-block; color:white">Log in</p>
+                </div>
+                <div class="col-xs-3 col-xs-offset-2 col-sm-3 col-sm-offset-2 col-md-3 col-md-offset-2 col-lg-3 col-lg-offset-2" style="background-color: #e65bb8; height: 45px;">
+                    <p class="h4 text-center" style="margin:auto; color:white">Sign Up</p>
+                </div>
+            </div>
+            -->
+            <div class="row" style="height: 55px;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!--navbar start-->
     <div class="navbar navbar-fixed-top" style="background-color: transparent; max-height: 50px;">
@@ -182,6 +214,7 @@ position:absolute;
         });
 
         var str = $('#mydiv').text();
+        var len = str.length();
         if(len>300){
           var new_str = str.subtstr(0,300);
           new_str += '<div data="'+str+'">' +  new_str + '... </div>';
